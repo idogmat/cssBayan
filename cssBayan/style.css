@@ -159,7 +159,7 @@ html {
 
 @media all and (max-width: 1024px) {
     html {
-        font-size: calc(2vw + 2vh + 1vmin);
+        font-size: calc(1vw + 1vh + 1vmin);
     }
     .container {
         padding: 0 calc(5px + (20 - 5) * ((100vw - 300px) / (1024 - 300)));
