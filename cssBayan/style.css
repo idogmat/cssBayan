@@ -156,6 +156,12 @@ html {
 .element input:checked ~ .element-content .element-img{
     opacity: 1;
 }
-.element input:checked {
-    /*opacity: 1;*/
+
+@media all and (max-width: 1024px) {
+    html {
+        font-size: calc(2vw + 2vh + 1vmin);
+    }
+    .container {
+        padding: 0 calc(5px + (20 - 5) * ((100vw - 300px) / (1024 - 300)));
+    }
 }
