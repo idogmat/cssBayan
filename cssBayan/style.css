@@ -1,0 +1,161 @@
+html {
+    font-family: "OpenSans", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    font-style: normal;
+    color: #333333;
+    background-color: #a79d9d;
+    line-height: 1.3;
+}
+
+.container {
+    max-width: 820px;
+    min-width: 300px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.header {
+    padding: 30px 0;
+    text-align: center;
+}
+
+.header-title {
+    font-weight: 600;
+}
+
+
+.elements-list {
+    margin: 0 auto;
+    list-style: none;
+}
+
+.elements-list:hover .element-btn {
+    transform: rotate(135deg) translateX(0) translateY(10px);
+}
+
+.elements-list:hover .element.active .element-btn {
+    transform: rotate(0) translateX(0);
+}
+
+.elements-list:hover .element-title
+{
+    color: #333333;
+}
+
+.element {
+    position: relative;
+    cursor: pointer;
+    border-top: 1px solid #bab6b6;
+}
+.element input{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    opacity: 0;
+}
+.element-label{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+.element:hover .element-content {
+    transform: scale(1);
+    max-height: none;
+}
+
+.element:hover .element-img {
+    opacity: 1;
+}
+
+.element:hover .element-btn {
+    transform: rotate(0deg) translateX(0);;
+}
+
+.element-header {
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+}
+
+.element-title {
+    padding-right: 20px;
+    font-weight: 500;
+    color: #004ad5;
+    transition: 0.15s color linear;
+}
+
+.element-btn {
+    cursor: pointer;
+    width: 35px;
+    height: 30px;
+    background-color: transparent;
+    border: none;
+    background-size: 50%;
+    transform: rotate(180deg) translateX(-30px);
+    transition: 0.15s transform linear;
+    flex-shrink: 0;
+    will-change: transform;
+}
+
+.element-content {
+    transform: scale(0);
+    text-align: center;
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.3s all linear;
+    will-change: transform;
+}
+
+.element-img {
+    max-width: 70%;
+    height: auto;
+    margin-bottom: 20px;
+    opacity: 0;
+    transition: 0.3s opacity linear;
+    will-change: opacity;
+    object-fit: cover;
+}
+
+.element.active .element-content {
+    transform: scale(1);
+    max-height: none;
+}
+
+.element.active .element-img {
+    opacity: 1;
+}
+.element:active .element-header .element-title,.element:active .element-header .element-btn svg {
+    color:pink;
+    fill:pink
+}
+
+.element.active .element-title {
+    color: #333333;
+}
+
+.element.active .element-btn
+{
+    transform: rotate(0deg) translateX(30px);
+}
+
+.element:last-child {
+    border-bottom: 1px solid #bab6b6;
+}
+.element input:checked ~ .element-header .element-btn{
+    transform: rotate(0deg) translateX(30px) translateX(-30px);
+}
+.element input:checked ~ .element-content{
+    transform: scale(1);
+    max-height: none;
+}
+.element input:checked ~ .element-content .element-img{
+    opacity: 1;
+}
+.element input:checked {
+    /*opacity: 1;*/
+}
